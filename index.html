@@ -1,1 +1,84 @@
-Tea Time Begins
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Tea Time Begins
+	</title>
+	<style>
+		body {
+			background-image: url(tea.gif);
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		.invitation {
+			background-color: #314b29;
+			color: #e7c789;
+			width: 40vw;
+			padding: 4%;
+			border-radius: 50px;
+			text-align: center;
+		}
+
+		h1 {
+			font-family: fantasy;
+			font-size: 8vw;
+		}
+
+		h2 {
+			font-family: cursive;
+			font-size: 4vw;
+		}
+
+		p {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-size: 2vw;
+		}
+	</style>
+	<script>
+		var audio = new Audio('music.mp3');
+		async function playMusic() {
+			if (!audio.playing) {
+				try {
+					await audio.play();
+					console.log('playing')
+				}
+				catch (DOMException) {
+					console.log("can't play yet")
+				}
+			}
+		}
+		document.onclick = playMusic
+		document.onscroll = playMusic
+		document.ondrag = playMusic
+		document.onmouseover = playMusic
+		document.oncanplay = playMusic
+		document.ontouchstart = playMusic
+		document.ontouchmove = playMusic
+	</script>
+</head>
+
+<body>
+	<div class="invitation">
+		<h1>
+			Tea Time
+		</h1>
+		<h2>
+			When
+		</h2>
+		<p>
+			Today, August 18 at 2:32 pm
+		</p>
+		<h2>
+			Where
+		</h2>
+		<p>Third floor breakroom</p>
+	</div>
+</body>
+
+</html>
